@@ -99,7 +99,7 @@ Authy.prototype.request_call = function (id, force, callback) {
 };
 
 Authy.prototype.phones = function() {
-    self = this;
+    var self = this;
     return {
         verification_start: function(phone_number, country_code, via, callback) {
             if(arguments.length == 3) {
@@ -134,7 +134,7 @@ Authy.prototype.phones = function() {
 };
 
 Authy.prototype._request = function(type, path, params, callback, qs) {
-    qs = qs || {}
+    var qs = qs || {}
     qs['api_key'] = this.apiKey;
 
     user_agent = "AuthyNode/"+VERSION+" (node "+process.version+")"
